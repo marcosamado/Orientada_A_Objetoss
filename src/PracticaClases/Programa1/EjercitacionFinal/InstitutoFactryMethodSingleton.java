@@ -1,8 +1,11 @@
 package PracticaClases.Programa1.EjercitacionFinal;
 
+import java.util.ArrayList;
+
 public class InstitutoFactryMethodSingleton {
 
     private static InstitutoFactryMethodSingleton instancia;
+    private ArrayList<OfertaAcademica> ofertasAcademicas = new ArrayList();
 
     private InstitutoFactryMethodSingleton(){};
 
@@ -23,8 +26,18 @@ public class InstitutoFactryMethodSingleton {
         return null;
     }
 
-    public String generarInforme(OfertaAcademica cursoOCarrera){
-        return cursoOCarrera.toString();
+    public void agregarOfertaAcademica(OfertaAcademica cursoOCarrera){
+        this.ofertasAcademicas.add(cursoOCarrera);
+    }
+    public void quitarOfertaAcademica(OfertaAcademica cursoOCarrera){
+        this.ofertasAcademicas.remove(cursoOCarrera);
+    }
+
+    public void generarInforme(){
+        for (OfertaAcademica x : this.ofertasAcademicas) {
+            System.out.println("Nombre: " + x.getNombre());
+            System.out.println("Costo: " + x.calcularPrecio());
+        }
     }
 
 }

@@ -8,4 +8,7 @@ public abstract class OfertaAcademica {
     public abstract double calcularPrecio();
 
 
+    public String getNombre() {
+        return nombre;
+    }
 }
