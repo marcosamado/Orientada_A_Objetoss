@@ -39,5 +39,4 @@ public class InstitutoFactryMethodSingleton {
             System.out.println("Costo: " + x.calcularPrecio());
         }
     }
-
 }

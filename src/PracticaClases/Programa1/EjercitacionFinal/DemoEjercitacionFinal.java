@@ -30,6 +30,8 @@ public class DemoEjercitacionFinal {
         carreraFullStack.setDescuento(20.00);
         System.out.println(carreraFullStack.calcularPrecio());
 
+
+
         insitutoGeneral.agregarOfertaAcademica(frontEnd);
         insitutoGeneral.agregarOfertaAcademica(backEnd);
         insitutoGeneral.agregarOfertaAcademica(carreraFullStack);
