@@ -1,7 +1,7 @@
 package PracticaClases.Programa1.EjercitacionFinal;
 
 public class DemoEjercitacionFinal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CrearOfertaAcademicaInexistenteException {
 
         InstitutoFactryMethodSingleton insitutoGeneral = InstitutoFactryMethodSingleton.obtenerInstancia();
         Curso frontEnd = (Curso) insitutoGeneral.ofertaAcademica("Curso");
@@ -30,7 +30,10 @@ public class DemoEjercitacionFinal {
         carreraFullStack.setDescuento(20.00);
         System.out.println(carreraFullStack.calcularPrecio());
 
-        System.out.println(insitutoGeneral.generarInforme(frontEnd));
-        System.out.println(insitutoGeneral.generarInforme(carreraFullStack));
+        insitutoGeneral.agregarOfertaAcademica(frontEnd);
+        insitutoGeneral.agregarOfertaAcademica(backEnd);
+        insitutoGeneral.agregarOfertaAcademica(carreraFullStack);
+
+        insitutoGeneral.generarInforme();
     }
 }
